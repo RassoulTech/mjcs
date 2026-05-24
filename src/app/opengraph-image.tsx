@@ -1,12 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-// Social share preview (Facebook, X/Twitter, LinkedIn, WhatsApp, Slack…).
-// Next.js generates the og:image and twitter:image meta tags automatically.
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "GestionPro — Gestion commerciale multi-boutiques";
+export const alt = "MJCS - Mouvement Jeunesse Consciente du Sénégal";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const logoData = await readFile(join(process.cwd(), "public/logo.jpg"));
+  const logoSrc = `data:image/jpeg;base64,${logoData.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -24,23 +27,16 @@ export default function OpenGraphImage() {
           gap: 32,
         }}
       >
-        <div
+        <img
+          src={logoSrc}
+          width="200"
+          height="200"
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 200,
-            height: 200,
-            borderRadius: 100,
-            background: "linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%)",
-            fontSize: 60,
-            fontWeight: 900,
-            letterSpacing: -2,
+            borderRadius: "50%",
             boxShadow: "0 30px 60px -20px rgba(59, 130, 246, 0.5)",
+            objectFit: "cover",
           }}
-        >
-          MJCS
-        </div>
+        />
         <div
           style={{
             fontSize: 76,
@@ -48,9 +44,10 @@ export default function OpenGraphImage() {
             letterSpacing: -2,
             textAlign: "center",
             lineHeight: 1,
+            marginTop: 20,
           }}
         >
-          MJCS Sénégal
+          MJCS
         </div>
         <div
           style={{
