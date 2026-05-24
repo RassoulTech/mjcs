@@ -31,15 +31,15 @@ export default function OpenGraphImage() {
             justifyContent: "center",
             width: 200,
             height: 200,
-            borderRadius: 56,
-            background: "linear-gradient(135deg, #EA580C 0%, #7C2D12 100%)",
-            fontSize: 150,
+            borderRadius: 100,
+            background: "linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%)",
+            fontSize: 60,
             fontWeight: 900,
-            letterSpacing: -8,
-            boxShadow: "0 30px 60px -20px rgba(234, 88, 12, 0.5)",
+            letterSpacing: -2,
+            boxShadow: "0 30px 60px -20px rgba(59, 130, 246, 0.5)",
           }}
         >
-          G
+          MJCS
         </div>
         <div
           style={{
@@ -50,7 +50,7 @@ export default function OpenGraphImage() {
             lineHeight: 1,
           }}
         >
-          GestionPro
+          MJCS Sénégal
         </div>
         <div
           style={{
@@ -62,7 +62,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.3,
           }}
         >
-          Gestion commerciale, POS et marketplace multi-boutiques pour l&apos;Afrique
+          Sunu gox, sunu naatange. Mouvement politique dédié à la souveraineté économique, l'équité territoriale et la transparence.
         </div>
       </div>
     ),
